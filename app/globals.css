@@ -1,0 +1,315 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+:root {
+  color-scheme: dark;
+  --tp-bg: #050a1b;
+  --tp-panel: rgba(9, 16, 34, 0.78);
+  --tp-panel-strong: rgba(8, 14, 31, 0.92);
+  --tp-border: rgba(151, 143, 255, 0.22);
+  --tp-purple: #9147ff;
+  --tp-blue: #149cff;
+  --tp-text: #f4f7ff;
+  --tp-muted: #9aa7c2;
+}
+
+html {
+  background: var(--tp-bg);
+}
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--tp-text);
+  background: var(--tp-bg);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.site-shell {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      110deg,
+      rgba(4, 8, 25, 0.94) 0%,
+      rgba(4, 9, 24, 0.82) 40%,
+      rgba(5, 10, 27, 0.93) 100%
+    ),
+    url("/teslapool-bg.jpg") center / cover fixed no-repeat;
+}
+
+.site-shell::before,
+.site-shell::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  border-radius: 999px;
+  filter: blur(2px);
+}
+.site-shell::before {
+  width: 520px;
+  height: 520px;
+  top: -260px;
+  left: -120px;
+  background: radial-gradient(
+    circle,
+    rgba(115, 54, 255, 0.28),
+    transparent 68%
+  );
+}
+.site-shell::after {
+  width: 620px;
+  height: 620px;
+  right: -300px;
+  bottom: -340px;
+  background: radial-gradient(circle, rgba(0, 126, 255, 0.18), transparent 68%);
+}
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #d7d9ff 38%,
+    #9b4dff 68%,
+    #119dff 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.brand-gradient {
+  background: linear-gradient(90deg, #fff 15%, #a78bff 55%, #22a6ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass {
+  background: linear-gradient(
+    145deg,
+    rgba(18, 25, 49, 0.82),
+    rgba(5, 12, 28, 0.76)
+  );
+  border: 1px solid var(--tp-border);
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(20px);
+}
+
+.auth-layout {
+  width: min(1180px, 100%);
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(420px, 0.72fr);
+  gap: 72px;
+  align-items: center;
+}
+
+.auth-brand {
+  padding: 20px 0;
+}
+
+.auth-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.tesla-mark {
+  width: 48px;
+  height: 32px;
+  position: relative;
+  display: inline-block;
+}
+.tesla-mark::before {
+  content: "T";
+  position: absolute;
+  inset: -8px 0 0;
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: 44px;
+  line-height: 1;
+  font-weight: 700;
+  color: #9b55ff;
+  text-shadow: 0 0 24px rgba(141, 64, 255, 0.65);
+  transform: scaleX(1.25);
+}
+
+.auth-heading {
+  margin-top: 48px;
+  max-width: 620px;
+  font-size: clamp(3.7rem, 7vw, 6.8rem);
+  line-height: 0.88;
+  letter-spacing: -0.065em;
+  font-weight: 850;
+}
+
+.auth-copy {
+  margin-top: 28px;
+  max-width: 500px;
+  color: #aab6d1;
+  font-size: 1.1rem;
+  line-height: 1.55;
+}
+
+.auth-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  padding: 52px 54px 42px;
+  background: linear-gradient(
+    145deg,
+    rgba(9, 17, 38, 0.9),
+    rgba(5, 11, 26, 0.84)
+  );
+  border: 1px solid rgba(142, 151, 196, 0.25);
+  box-shadow:
+    0 35px 100px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(24px);
+}
+
+.auth-card::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  right: -100px;
+  top: -150px;
+  border-radius: 50%;
+  border: 1px solid rgba(143, 76, 255, 0.45);
+  box-shadow:
+    -34px 34px 0 -1px rgba(109, 82, 255, 0.14),
+    -66px 66px 0 -1px rgba(31, 144, 255, 0.08);
+  pointer-events: none;
+}
+
+.auth-card .input,
+.auth-card .select,
+.dashboard-input {
+  height: 58px;
+  border-radius: 18px;
+  color: #f3f6ff;
+  background: rgba(17, 27, 48, 0.72);
+  border: 1px solid rgba(133, 147, 183, 0.22);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+.auth-card .input::placeholder,
+.dashboard-input::placeholder {
+  color: #8793ad;
+}
+.auth-card .input:focus,
+.auth-card .select:focus,
+.dashboard-input:focus {
+  outline: none;
+  border-color: rgba(93, 155, 255, 0.75);
+  box-shadow:
+    0 0 0 3px rgba(106, 73, 255, 0.14),
+    0 0 28px rgba(42, 126, 255, 0.1);
+}
+
+.btn-primary {
+  color: #fff !important;
+  border: 0 !important;
+  background: linear-gradient(
+    100deg,
+    #943cf3 0%,
+    #7253ff 45%,
+    #099bf5 100%
+  ) !important;
+  box-shadow: 0 12px 30px rgba(92, 66, 255, 0.25);
+}
+.btn-primary:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+.btn-outline {
+  color: #e7ebff !important;
+  border-color: rgba(136, 90, 255, 0.78) !important;
+  background: rgba(5, 12, 28, 0.28) !important;
+}
+.btn-outline:hover {
+  background: rgba(93, 70, 196, 0.16) !important;
+  border-color: #1a9eff !important;
+}
+.text-primary {
+  color: #a46aff !important;
+}
+.link-primary {
+  color: #5eafff !important;
+}
+.badge-primary {
+  background: linear-gradient(90deg, #793dff, #2c8cff) !important;
+  color: white !important;
+  border: 0;
+}
+.badge-success {
+  background: rgba(28, 206, 143, 0.14) !important;
+  color: #55e5ad !important;
+  border: 1px solid rgba(56, 226, 166, 0.22);
+}
+
+.navbar {
+  position: relative;
+  z-index: 10;
+  min-height: 78px;
+  border-bottom: 1px solid rgba(135, 145, 190, 0.1);
+  background: rgba(5, 10, 24, 0.28);
+  backdrop-filter: blur(14px);
+}
+
+.dashboard-card {
+  border-radius: 26px;
+  background: linear-gradient(
+    145deg,
+    rgba(15, 24, 48, 0.78),
+    rgba(5, 12, 29, 0.72)
+  );
+  border: 1px solid rgba(129, 144, 193, 0.18);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.25);
+}
+
+.route-map-frame {
+  border: 1px solid rgba(125, 145, 205, 0.2);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.28);
+}
+
+@media (max-width: 900px) {
+  .auth-layout {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    max-width: 620px;
+  }
+  .auth-brand {
+    padding: 10px 0 0;
+  }
+  .auth-heading {
+    margin-top: 30px;
+    font-size: clamp(3rem, 12vw, 5rem);
+  }
+  .auth-copy {
+    margin-top: 18px;
+  }
+  .auth-card {
+    padding: 36px 28px 30px;
+  }
+}
+
+@media (max-width: 560px) {
+  .auth-layout {
+    gap: 16px;
+  }
+  .auth-heading {
+    font-size: 3.1rem;
+  }
+  .auth-card {
+    border-radius: 22px;
+    padding: 30px 18px 24px;
+  }
+}

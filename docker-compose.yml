@@ -1,0 +1,22 @@
+services:
+  mongo:
+    image: mongo:8
+    restart: unless-stopped
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  app:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      MONGODB_URI: mongodb://mongo:27017/tesla_pool
+      JWT_SECRET: change-this-in-production
+    depends_on:
+      - mongo
+
+volumes:
+  mongo_data:

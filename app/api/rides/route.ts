@@ -1,0 +1,3 @@
+import {NextResponse} from 'next/server';import {db} from '@/lib/mongodb';import {requireSession,oid} from '@/lib/auth';
+function clean(r:any){return {...r,_id:r._id.toString(),passengerId:r.passengerId?.toString(),driverId:r.driverId?.toString(),createdAt:r.createdAt?.toISOString?.()}};
+export async function GET(){try{const s=await requireSession();const database=await db();let q:any={};if(s.role==='passenger')q={passengerId:oid(s.id)};else q={driverId:oid(s.id)};const rides=await database.collection('rides').find(q).sort({createdAt:-1}).limit(50).toArray();return NextResponse.json({rides:rides.map(clean)});}catch{return NextResponse.json({error:'Unauthorized'},{status:401})}}
