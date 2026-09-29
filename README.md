@@ -61,6 +61,51 @@ Complete
 Ride History
 ```
 
+## 🎥Six-Minute Final Video
+
+> **Maximum duration: 6 minutes**
+
+👉 **[▶️ Watch the Final Project Demo](YOUR_GOOGLE_DRIVE_LINK)**
+
+The video demonstrates the passenger flow, driver flow, ride pooling,
+3-seat capacity enforcement, ride lifecycle, MongoDB, and Docker setup.
+
+---
+
+## 📸 Screenshots
+
+<div align="center">
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./screenshots/home.png" width="300" /><br />
+      <b>Home</b>
+    </td>
+    <td align="center">
+      <img src="./screenshots/registration.png" width="300" /><br />
+      <b>Passenger Dashboard</b>
+    </td>
+    <td align="center">
+      <img src="./screenshots/dashboard.png" width="300" /><br />
+      <b>Driver Dashboard</b>
+    </td>
+  </tr>
+   <tr>
+
+  <td align="center">
+      <img src="./screenshots/process.png" width="300" /><br />
+      <b>Passenger Dashboard</b>
+  </td>
+  <td align="center">
+      <img src="./screenshots/history.png" width="300" /><br />
+      <b>Driver Dashboard</b>
+  </td>
+</tr>
+</table>
+
+</div>
+
 ---
 
 ## 🚀 Features
