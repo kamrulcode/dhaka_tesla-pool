@@ -1,3 +1,36 @@
 import Link from "next/link";
 import { getSession } from "@/lib/auth";
-export default async function Home(){const s=await getSession();return <main className="site-shell min-h-screen flex items-center justify-center p-6"><div className="max-w-3xl text-center"><p className="text-primary font-semibold">TESLAPOOL</p><h1 className="text-5xl md:text-7xl font-bold mt-3 gradient-text">Three seats.<br/>One shared ride.</h1><p className="text-base-content/60 text-lg mt-6">Book one, two, or all three Tesla seats. Drivers can share available seats with nearby passengers.</p><div className="flex justify-center gap-3 mt-8"><Link className="btn btn-primary" href={s?(s.role==='driver'?'/driver':'/passenger'):'/register'}>{s?'Open dashboard':'Go as a passenger'}</Link>{!s&&<Link className="btn btn-outline" href="/register/driver">Drive a Tesla</Link>}</div></div></main>}
+export default async function Home() {
+  const s = await getSession();
+  return (
+    <main className="site-shell min-h-screen flex items-center justify-center p-6">
+      <div className="max-w-3xl text-center">
+        <p className="text-primary font-semibold">TESLAPOOL</p>
+        <h1 className="text-5xl md:text-7xl font-bold mt-3 gradient-text">
+          Three seats.
+          <br />
+          One shared ride.
+        </h1>
+        <p className="text-base-content/60 text-lg mt-6">
+          Book one, two, or all three Tesla seats. Drivers can share available
+          seats with nearby passengers.
+        </p>
+        <div className="flex justify-center gap-3 mt-8">
+          <Link
+            className="btn btn-primary"
+            href={
+              s ? (s.role === "driver" ? "/driver" : "/passenger") : "/register"
+            }
+          >
+            {s ? "Open dashboard" : "Go as a passenger"}
+          </Link>
+          {!s && (
+            <Link className="btn btn-outline" href="/register/driver">
+              Drive a Tesla
+            </Link>
+          )}
+        </div>
+      </div>
+    </main>
+  );
+}
