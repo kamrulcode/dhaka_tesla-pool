@@ -1,2 +1,29 @@
-import {NextResponse} from 'next/server';import bcrypt from 'bcryptjs';import {db} from '@/lib/mongodb';import {createSession} from '@/lib/auth';
-export async function POST(req:Request){try{const {email,password}=await req.json();const u=await (await db()).collection('users').findOne({email:String(email).toLowerCase()});if(!u||!(await bcrypt.compare(password,u.passwordHash)))return NextResponse.json({error:'Invalid email or password'},{status:401});await createSession({id:u._id.toString(),role:u.role,name:u.name,email:u.email});return NextResponse.json({ok:true,user:{role:u.role,name:u.name}})}catch{return NextResponse.json({error:'Login failed'},{status:500})}}
+import { NextResponse } from "next/server";
+import bcrypt from "bcryptjs";
+import { db } from "@/lib/mongodb";
+import { createSession } from "@/lib/auth";
+export async function POST(req: Request) {
+  try {
+    const { email, password } = await req.json();
+    const u = await (await db())
+      .collection("users")
+      .findOne({ email: String(email).toLowerCase() });
+    if (!u || !(await bcrypt.compare(password, u.passwordHash)))
+      return NextResponse.json(
+        { error: "Invalid email or password" },
+        { status: 401 },
+      );
+    await createSession({
+      id: u._id.toString(),
+      role: u.role,
+      name: u.name,
+      email: u.email,
+    });
+    return NextResponse.json({
+      ok: true,
+      user: { role: u.role, name: u.name },
+    });
+  } catch {
+    return NextResponse.json({ error: "Login failed" }, { status: 500 });
+  }
+}

@@ -115,7 +115,7 @@ export function AuthForm({ driver = false }: { driver?: boolean }) {
             >
               {loading ? "Creating..." : "Register"} <span>→</span>
             </button>
-            <div className="text-center text-sm text-base-content/60">
+            <div className="text-center text-sm text-[#E2E4FF]">
               Already registered?{" "}
               <Link className="link link-primary" href="/login">
                 Sign in

@@ -1,3 +1,96 @@
 "use client";
-import Link from "next/link"; import {useRouter} from "next/navigation"; import {useState} from "react"; import {useToast} from "@/components/toast";
-export default function Login(){const [email,setEmail]=useState(''),[password,setPassword]=useState(''),[loading,setLoading]=useState(false);const router=useRouter();const {toast}=useToast();async function submit(e:React.FormEvent){e.preventDefault();setLoading(true);try{const r=await fetch('/api/auth/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,password})});const d=await r.json();if(!r.ok)throw new Error(d.error);toast('Welcome back','success');router.push(d.user.role==='driver'?'/driver':'/passenger')}catch(e){toast(e instanceof Error?e.message:'Login failed','error')}finally{setLoading(false)}}return <main className="site-shell min-h-screen flex items-center justify-center px-5 py-10"><div className="auth-layout"><section className="auth-brand"><div className="auth-logo"><span className="tesla-mark"/> <span className="brand-gradient">TeslaPool</span></div><h1 className="auth-heading">Go as a <span className="gradient-text">passenger</span></h1><p className="auth-copy">Find a Tesla with available seats and share the ride.</p></section><section className="auth-card"><div className="relative z-10"><span className="badge badge-primary px-4 py-3 rounded-full">Welcome Back</span><h2 className="text-4xl font-bold mt-5 tracking-tight">Sign in</h2><p className="text-base-content/60 mt-2">Sign in to continue with TeslaPool.</p><form onSubmit={submit} className="mt-8 space-y-4"><input className="input input-bordered w-full" type="email" required placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)}/><input className="input input-bordered w-full" type="password" required placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)}/><button className="btn btn-primary w-full h-14 rounded-2xl text-base font-bold" disabled={loading}>{loading?'Signing in...':'Sign in'} <span>→</span></button><div className="text-center text-sm">New passenger? <Link className="link link-primary" href="/register">Register</Link></div><div className="text-center text-sm">Want to drive? <Link className="link link-primary" href="/register/driver">Driver registration</Link></div></form></div></section></div></main>}
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { useToast } from "@/components/toast";
+export default function Login() {
+  const [email, setEmail] = useState(""),
+    [password, setPassword] = useState(""),
+    [loading, setLoading] = useState(false);
+  const router = useRouter();
+  const { toast } = useToast();
+  async function submit(e: React.FormEvent) {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const r = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+      const d = await r.json();
+      if (!r.ok) throw new Error(d.error);
+      toast("Welcome back", "success");
+      router.push(d.user.role === "driver" ? "/driver" : "/passenger");
+    } catch (e) {
+      toast(e instanceof Error ? e.message : "Login failed", "error");
+    } finally {
+      setLoading(false);
+    }
+  }
+  return (
+    <main className="site-shell min-h-screen flex items-center justify-center px-5 py-10">
+      <div className="auth-layout">
+        <section className="auth-brand">
+          <div className="auth-logo">
+            <span className="tesla-mark" />{" "}
+            <span className="brand-gradient">TeslaPool</span>
+          </div>
+          <h1 className="auth-heading">
+            Go as a <span className="gradient-text">passenger</span>
+          </h1>
+          <p className="auth-copy">
+            Find a Tesla with available seats and share the ride.
+          </p>
+        </section>
+        <section className="auth-card">
+          <div className="relative z-10">
+            <span className="badge badge-primary px-4 py-3 rounded-full">
+              Welcome Back
+            </span>
+            <h2 className="text-4xl font-bold mt-5 tracking-tight">Sign in</h2>
+            <p className="text-base-content/60 mt-2">
+              Sign in to continue with TeslaPool.
+            </p>
+            <form onSubmit={submit} className="mt-8 space-y-4">
+              <input
+                className="input input-bordered w-full"
+                type="email"
+                required
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                className="input input-bordered w-full"
+                type="password"
+                required
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button
+                className="btn btn-primary w-full h-14 rounded-2xl text-base font-bold"
+                disabled={loading}
+              >
+                {loading ? "Signing in..." : "Sign in"} <span>→</span>
+              </button>
+              <div className="text-center text-sm">
+                New passenger?{" "}
+                <Link className="link link-primary" href="/register">
+                  Register
+                </Link>
+              </div>
+              <div className="text-center text-sm">
+                Want to drive?{" "}
+                <Link className="link link-primary" href="/register/driver">
+                  Driver registration
+                </Link>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+  );
+}
