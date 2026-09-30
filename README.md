@@ -67,7 +67,7 @@ Ride History
 
 [![▶ Watch Dhaka Tesla Pool Demo](./screenshots/video-thumbnail.png)](https://drive.google.com/file/d/1Br3SAzyY9dxgq3nW-q_kIP8MF3OryJ5K/view?usp=sharing)
 
-**Duration:** 5:XX minutes  
+**Duration:** 6:10 minutes  
 **Stack:** Next.js · Express.js · MongoDB · Docker
 
 ---
