@@ -63,12 +63,12 @@ Ride History
 
 ## 🎥Six-Minute Final Video
 
-> **Maximum duration: 6 minutes**
+**Click the thumbnail below to watch the full 6-minute project demonstration.**
 
-👉 **[▶️ Watch the Final Video][FINAL VIDEO_DRIVE_LINK](https://drive.google.com/file/d/1Br3SAzyY9dxgq3nW-q_kIP8MF3OryJ5K/view?usp=sharing)**
+[![▶ Watch Dhaka Tesla Pool Demo](./screenshots/video-thumbnail.png)](https://drive.google.com/file/d/1Br3SAzyY9dxgq3nW-q_kIP8MF3OryJ5K/view?usp=sharing)
 
-The video demonstrates the passenger flow, driver flow, ride pooling,
-3-seat capacity enforcement, ride lifecycle, MongoDB, and Docker setup.
+**Duration:** 5:XX minutes  
+**Stack:** Next.js · Express.js · MongoDB · Docker
 
 ---
 
