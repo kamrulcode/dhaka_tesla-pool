@@ -11,7 +11,7 @@ export default async function Home() {
           <br />
           One shared ride.
         </h1>
-        <p className="text-base-content/60 text-lg mt-6">
+        <p className=" text-lg mt-6 text-[#E2E4FF]">
           Book one, two, or all three Tesla seats. Drivers can share available
           seats with nearby passengers.
         </p>
