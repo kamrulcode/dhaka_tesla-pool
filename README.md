@@ -61,50 +61,6 @@ Complete
 Ride History
 ```
 
-## 🎥Six-Minute Final Video
-
-**Click the thumbnail below to watch the full 6-minute project demonstration.**
-
-[![▶ Watch Dhaka Tesla Pool Demo](./screenshots/video-thumbnail.png)](https://drive.google.com/file/d/1Br3SAzyY9dxgq3nW-q_kIP8MF3OryJ5K/view?usp=sharing)
-
-**Duration:** 6:10 minutes  
-**Stack:** Next.js · Express.js · MongoDB · Docker
-
----
-
-## 📸 Screenshots
-
-<div align="center">
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="./screenshots/home.png" width="300" /><br />
-      <b>Home</b>
-    </td>
-    <td align="center">
-      <img src="./screenshots/registration.png" width="300" /><br />
-      <b>Passenger Dashboard</b>
-    </td>
-    <td align="center">
-      <img src="./screenshots/dashboard.png" width="300" /><br />
-      <b>Driver Dashboard</b>
-    </td>
-  </tr>
-   <tr>
-
-  <td align="center">
-      <img src="./screenshots/process.png" width="300" /><br />
-      <b>Passenger Dashboard</b>
-  </td>
-  <td align="center">
-      <img src="./screenshots/history.png" width="300" /><br />
-      <b>Driver Dashboard</b>
-  </td>
-</tr>
-</table>
-
-</div>
 
 ---
 
@@ -167,6 +123,57 @@ Discount  = 9%
 Fare / seat = Tk 72.80
 Total       = Tk 145.60
 ```
+
+
+## 🎥Six-Minute Final Video
+
+**Click the thumbnail below to watch the full 6-minute project demonstration.**
+
+[![▶ Watch Dhaka Tesla Pool Demo](./screenshots/video-thumbnail.png)](https://drive.google.com/file/d/1Br3SAzyY9dxgq3nW-q_kIP8MF3OryJ5K/view?usp=sharing)
+
+**Duration:** 6:10 minutes  
+**Stack:** Next.js · Express.js · MongoDB · Docker
+
+---
+
+## 📸 Screenshots
+
+<div align="center">
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./screenshots/home.png" width="500" /><br />
+      <b>Home</b>
+    </td>
+    <td align="center">
+      <img src="./screenshots/registration.png" width="500" /><br />
+      <b> Registration</b>
+    </td>
+    
+  </tr>
+   <tr>
+   <td align="center">
+      <img src="./screenshots/dashboard.png" width="500" /><br />
+      <b>Dashboard</b>
+    </td>
+
+  <td align="center">
+      <img src="./screenshots/process.png" width="500" /><br />
+      <b>Passenger Process</b>
+  </td>
+  
+</tr>
+<tr>
+  <td align="center">
+      <img src="./screenshots/history.png" width="500" /><br />
+      <b>History</b>
+  </td>
+</tr>
+</table>
+
+</div>
+
 
 ---
 
